@@ -1,0 +1,9 @@
+# Query: /api/data endpoint latency > 3s
+# Alert threshold: >5 occurrences per 10min window
+
+_sourceCategory=prod/web_logs "/api/data"
+| parse regex "\"response_time\":\\s*(?<rt>\d+)"
+| where toLong(rt) > 3000
+| timeslice 10m
+| count by _timeslice
+| where _count > 5
