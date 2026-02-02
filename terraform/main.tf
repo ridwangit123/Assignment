@@ -9,6 +9,7 @@ terraform {
 
 provider "aws" {
   region = var.region
+  profile = "new-profilerid"
 }
 
 resource "aws_sns_topic" "alerts" {
