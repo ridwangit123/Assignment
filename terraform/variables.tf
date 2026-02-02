@@ -4,7 +4,7 @@ variable "region" {
 }
 
 variable "ami" {
-  description = "AMI ID for the EC2 instance (provide a linux AMI for your region)"
+  description = "ami-0532be01f26a3de55"
   type        = string
 }
 
