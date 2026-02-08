@@ -17,5 +17,5 @@ variable "instance_type" {
 variable "notification_email" {
   description = "Email address to subscribe to SNS topic alerts"
   type        = string
-  default     = "ridwanadewusi3@gmail.com"
+  default     = "isholade95@gmail.com,"
 }
