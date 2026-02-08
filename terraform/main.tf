@@ -9,11 +9,16 @@ terraform {
 
 provider "aws" {
   region = var.region
-  profile = "new-profilerid"
 }
 
 resource "aws_sns_topic" "alerts" {
   name = "pacerpro-alerts"
+}
+
+resource "aws_sns_topic_subscription" "alerts_email" {
+  topic_arn = aws_sns_topic.alerts.arn
+  protocol  = "email"
+  endpoint  = var.notification_email
 }
 
 resource "aws_instance" "app" {
